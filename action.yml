@@ -1,0 +1,13 @@
+name: 'GitHub Action for Civo - civo'
+description: 'Use civo to manage your Civo resources.'
+author: 'Alejandro JNM <alejandro@civo.com>'
+branding:
+  icon: 'play'
+  color: 'blue'
+inputs:
+  token:
+    description: 'Civo API Token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
