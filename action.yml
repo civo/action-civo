@@ -1,4 +1,4 @@
-name: 'GitHub Action for Civo - civo'
+name: 'GitHub Action for Civo'
 description: 'Use civo to manage your Civo resources.'
 author: 'Alejandro JNM <alejandro@civo.com>'
 branding:
