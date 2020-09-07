@@ -8,7 +8,7 @@ To install the latest version of `civo` and use it in GitHub Actions workflows, 
 
 ```yaml
     - name: Install civo
-      uses: civo/action-civo
+      uses: civo/action-civo@master
       with:
         token: ${{ secrets.CIVO_TOKEN }}
 ```
@@ -17,7 +17,7 @@ To install the latest version of `civo` and use it in GitHub Actions workflows, 
 
 ```yaml
     - name: Save Civo kubeconfig
-      run: civo kubernetes config CLUSTER_NAME
+      run: civo kubernetes config CLUSTER_NAME -s -p /tmp/kube.config
 ```
 
 ### Arguments
