@@ -15,5 +15,5 @@ outputs:
   version:
     description: "civo cli version"
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: 'node16'
+  main: 'dist/index.js'
