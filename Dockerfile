@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM alpine:lastest
+FROM alpine:3.10
 
 RUN apk add --no-cache curl && \
     curl -sL https://civo.com/get | sh
