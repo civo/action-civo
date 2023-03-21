@@ -10,9 +10,7 @@ inputs:
     required: true
 outputs:
   version:
-    description: "The version of the civo cli"
+    description: "civo cli version"
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.token }}

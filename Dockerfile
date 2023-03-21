@@ -1,11 +1,17 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM golang:1.20 as builder
 
-RUN apk add --no-cache curl && curl -sL https://civo.com/get | sh
-RUN echo "/usr/local/bin" >> $GITHUB_PATH
+WORKDIR /app
+COPY . /app
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+RUN go get -d -v
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+# Statically compile our app for use in a distroless container
+RUN CGO_ENABLED=0 go build -ldflags="-w -s" -v -o app .
+
+# A distroless container image with some basics like SSL certificates
+# https://github.com/GoogleContainerTools/distroless
+FROM gcr.io/distroless/static
+
+COPY --from=builder /app/app /app
+
+ENTRYPOINT ["/app"]

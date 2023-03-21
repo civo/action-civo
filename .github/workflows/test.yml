@@ -9,11 +9,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Install civo
         uses: ./ # Uses an action in the root directory
-        id: civo-cli
+        id: civocli
         with:
           token: 5446d7ad6b654c1ea9e305ad4933b66d # This is a fake token
       # Use the output from the `civo-cli` step
-      - name: Get the output version
-        run: echo "The version was ${{ steps.civo-cli.outputs.version }}"
-      - name: List the api keys
-        run: civo apikey list
+      - name: Check outputs
+        run: |
+          test "${{ steps.civocli.outputs.version }}" == "5446d7ad6b654c1ea9e305ad4933b66d"
+      # - name: List the api keys
+      #   run: civo apikey list
