@@ -9,5 +9,5 @@ inputs:
     description: 'Civo API Token'
     required: true
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'docker'
+  image: 'civo/cli:latest'
