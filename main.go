@@ -10,5 +10,5 @@ func main() {
 
 	output := fmt.Sprintf("%s", token)
 
-	fmt.Println(fmt.Sprintf(`::set-output name=version::%s`, output))
+	fmt.Println(fmt.Sprintf(`version=%s >> $GITHUB_OUTPUT`, output))
 }
