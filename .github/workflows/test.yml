@@ -11,7 +11,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: civo-cli
         with:
-          token: '5446d7ad6b654c1ea9e305ad4933b66d' # This is a fake token
+          token: 5446d7ad6b654c1ea9e305ad4933b66d # This is a fake token
       # Use the output from the `civo-cli` step
       - name: Get the output time
         run: echo "The time was ${{ steps.civo-cli.outputs.time }}"
