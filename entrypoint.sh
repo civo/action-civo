@@ -1,9 +1,4 @@
 #!/bin/sh -l
-
-#  Downlaod the civo cli
-echo ">>> Adding the civo api key" >> $GITHUB_OUTPUT
-
-civo apikey save action $1
-civo apikey use action
-
-echo ">>> Successfully logged into civo" >> $GITHUB_OUTPUT 
+version=$(civo version)
+echo "Civo CLI version: $version" >> $GITHUB_OUTPUT
+civo apikey save action $1 && civo apikey use action

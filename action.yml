@@ -8,6 +8,11 @@ inputs:
   token:
     description: "Civo API Token"
     required: true
+outputs:
+  version:
+    description: "The version of the civo cli"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.token }}
