@@ -12,6 +12,11 @@ jobs:
   package_check:
     runs-on: ubuntu-latest
     steps:
+    - name: Install NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.19.1'
+
       - uses: actions/checkout@master
       - name: "Ensure that code has been packaged and commited"
         run: |-
