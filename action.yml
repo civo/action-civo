@@ -1,13 +1,13 @@
-name: 'GitHub Action for Civo'
-description: 'Use civo to manage your Civo resources.'
-author: 'Alejandro JNM <alejandro@civo.com>'
+name: "GitHub Action for Civo"
+description: "Use civo to manage your Civo resources."
+author: "Alejandro JNM <alejandro@civo.com>"
 branding:
-  icon: 'play'
-  color: 'blue'
+  icon: "play"
+  color: "blue"
 inputs:
   token:
-    description: 'Civo API Token'
+    description: "Civo API Token"
     required: true
 runs:
-  using: 'docker'
-  image: 'civo/cli:latest'
+  using: "docker"
+  image: "Dockerfile"
