@@ -8,6 +8,9 @@ inputs:
   token:
     description: "Civo API Token"
     required: true
+  version:
+    description: 'Version of civo to install'
+    default: 'latest'
 outputs:
   version:
     description: "civo cli version"
