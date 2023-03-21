@@ -11,6 +11,7 @@ jobs:
 
   package_check:
     runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@master
       - name: "Ensure that code has been packaged and commited"
         run: |-
